@@ -41,8 +41,12 @@ const conexion= "mongodb+srv://joancema:jacm1310@cluster0.x7met.mongodb.net/ejem
         }
         );
     const guardado=  await usuario1.save();
-    const resultado =  await Usuario.find();
-    console.log(resultado)
+
+    const resultado =  await Usuario.find()
+    .populate("idgrupo")
+    .populate("permisos.permiso");
+
+    console.log(resultado[4].permisos)
 })();
     
 
