@@ -24,7 +24,7 @@ const crearProducto = async (req,res )=>{
         const productoExiste = await Producto.findOne({ nombre:body.nombre });
         if (productoExiste)
         {
-            res.status(400).json({
+            return res.status(400).json({
                 message:
                 `El producto con ese nombre ya existe ${productoExiste.nombre}`
             })
