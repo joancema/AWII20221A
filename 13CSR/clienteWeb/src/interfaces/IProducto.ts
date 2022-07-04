@@ -6,12 +6,12 @@ export interface IResProducto {
 }
 
 export interface Producto {
-    _id:    string;
+    _id?:    string;
     nombre: string;
-    estado: boolean;
+    estado?: boolean;
     precio: number;
     costo:  number;
     minimo: number;
     stock:  number;
-    __v:    number;
+    __v?:    number;
 }
